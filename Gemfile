@@ -1,12 +1,25 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "test-kitchen", ">= 1.0.0.alpha.7"
-gem "librarian-chef", ">= 0.0.1"
+gem 'berkshelf'
+
+# Uncomment these lines if you want to live on the Edge:
+#
+# group :development do
+#   gem "berkshelf", github: "berkshelf/berkshelf"
+#   gem "vagrant", github: "mitchellh/vagrant", tag: "v1.6.3"
+# end
+#
+# group :plugins do
+#   gem "vagrant-berkshelf", github: "berkshelf/vagrant-berkshelf"
+#   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
+# end
+
+gem 'test-kitchen'
 
 group :docker do
-  gem "kitchen-docker", ">= 0.8.0"
+  gem 'kitchen-docker'
 end
 
 group :vagrant do
-  gem "kitchen-vagrant"
+  gem 'kitchen-vagrant'
 end
