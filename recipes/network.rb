@@ -20,14 +20,14 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "networkerrors" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::network.errors.target::: -w :::network.errors.warning::: -c :::network.errors.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::network.errors.target:::\" -w :::network.errors.warning::: -c :::network.errors.critical:::"
   handlers ["default"]
   standalone true
   interval 30
 end
 
 sensu_check "networkdrop" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::network.drop.target::: -w :::network.drop.warning::: -c :::network.drop.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::network.drop.target:::\" -w :::network.drop.warning::: -c :::network.drop.critical:::"
   handlers ["default"]
   standalone true
   interval 30

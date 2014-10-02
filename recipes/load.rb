@@ -20,7 +20,7 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "load" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::load.target::: -w :::load.warning::: -c :::load.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::load.target:::\" -w :::load.warning::: -c :::load.critical:::"
   handlers ["default"]
   standalone true
   interval 30

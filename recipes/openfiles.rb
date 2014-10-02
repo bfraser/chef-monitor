@@ -20,7 +20,7 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "openfiles" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::openfiles.target::: -w :::openfiles.warning::: -c :::openfiles.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::openfiles.target:::\" -w :::openfiles.warning::: -c :::openfiles.critical:::"
   handlers ["default"]
   standalone true
   interval 30

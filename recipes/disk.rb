@@ -20,28 +20,28 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "bytesfree" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::disk.bytesfree.target::: -w :::disk.bytesfree.warning::: -c :::disk.bytesfree.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::disk.bytesfree.target:::\" -w :::disk.bytesfree.warning::: -c :::disk.bytesfree.critical:::"
   handlers ["default"]
   standalone true
   interval 30
 end
 
 sensu_check "inodesfree" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::disk.inodesfree.target::: -w :::disk.inodesfree.warning::: -c :::disk.inodesfree.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::disk.inodesfree.target:::\" -w :::disk.inodesfree.warning::: -c :::disk.inodesfree.critical:::"
   handlers ["default"]
   standalone true
   interval 30
 end
 
 sensu_check "await" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::disk.await.target::: -w :::disk.await.warning::: -c :::disk.await.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::disk.await.target:::\" -w :::disk.await.warning::: -c :::disk.await.critical:::"
   handlers ["default"]
   standalone true
   interval 30
 end
 
 sensu_check "util" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::disk.util.target::: -w :::disk.util.warning::: -c :::disk.util.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::disk.util.target:::\" -w :::disk.util.warning::: -c :::disk.util.critical:::"
   handlers ["default"]
   standalone true
   interval 30

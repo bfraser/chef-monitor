@@ -20,14 +20,14 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "swapin" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::swap.in.target::: -w :::swap.in.warning::: -c :::swap.in.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::swap.in.target:::\" -w :::swap.in.warning::: -c :::swap.in.critical:::"
   handlers ["default"]
   standalone true
   interval 30
 end
 
 sensu_check "swapout" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::swap.out.target::: -w :::swap.out.warning::: -c :::swap.out.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::swap.out.target:::\" -w :::swap.out.warning::: -c :::swap.out.critical:::"
   handlers ["default"]
   standalone true
   interval 30

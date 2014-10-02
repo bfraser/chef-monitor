@@ -20,7 +20,7 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "boottime" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::boottime.target::: -w :::boottime.warning::: -c :::boottime.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t \":::boottime.target:::\" -w :::boottime.warning::: -c :::boottime.critical:::"
   handlers ["default"]
   standalone true
   interval 30
