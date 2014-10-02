@@ -20,7 +20,7 @@
 include_recipe "monitor::_graphite_plugin"
 
 sensu_check "ntpd" do
-  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::ntpd.target::: -w :::ntpd.warning::: -c :::ntpd.critical:::"
+  command "check-data.rb -a :::graphite.age::: -s :::graphite.server::: -t :::ntpd.offset.target::: -w :::ntpd.offset.warning::: -c :::ntpd.offset.critical:::"
   handlers ["default"]
   standalone true
   interval 30
